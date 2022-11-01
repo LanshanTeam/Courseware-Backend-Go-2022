@@ -380,7 +380,7 @@ func main() {
 
 #### 练习
 
-https://www.acwing.com/problem/content/724/（使用range）
+https://www.acwing.com/problem/content/724/ （使用range）
 
 ### func
 
@@ -547,7 +547,7 @@ func main() {
 
 #### 练习
 
-https://www.acwing.com/problem/content/818/（使用方法，不使用函数）
+https://www.acwing.com/problem/content/818/ （使用方法，不使用函数）
 
 ### interface
 
@@ -999,7 +999,7 @@ func main() {
 
 #### 样例图片
 
-![](https://picture.lanlance.cn/i/2022/10/30/635e6206f12ab.png)
+![pic](https://picture.lanlance.cn/i/2022/10/30/635e6206f12ab.png)
 
 #### 样例代码
 
