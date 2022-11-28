@@ -7,7 +7,7 @@
 | 第二节课 |     并发基础      | 唐文荟  |
 | 第三节课 |     gin 框架与中间件入门    | 袁鑫浩  |
 | 第四节课 |  MySQL 与 GORM   | 冯祥瑞  |
-| 第五节课 |           Redis 消息队列          | 李明杰 |
+| 第五节课 |           Redis 与消息队列          | 李明杰 |
 | 第六节课 |   完整项目开发（理论+实战）  |  王鑫  |
-| 第七节课 | Linux Docker(docker-compose)  | 冯祥瑞 |
-| 第八节课 |      MySQL Redis 消息队列 进阶           | 李明杰 |
+| 第七节课 | Linux Docker  | 冯祥瑞 |
+| 第八节课 |      MySQL Redis 消息队列 进阶   | 李明杰 |
