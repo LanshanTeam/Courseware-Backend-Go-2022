@@ -1,8 +1,9 @@
-# 第七节课
+# 第五节课
 
 
 
 ## Redis初识
+
 
 Redis全称为：Remote Dictionary Server（远程数据服务），该软件使用C语言编写，Redis是一个key-value存储系统，其有以下特点。
 
