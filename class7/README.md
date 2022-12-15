@@ -57,7 +57,6 @@ cat main.go
 ###### 修改文件权限
 
 ```shell
-#权限是八进制
 chmod 733 main
 chmod +x main
 ```
@@ -77,7 +76,7 @@ touch main.go
 vi main.go
 ```
 
-[vim入门到精通]:https://zhuanlan.zhihu.com/p/68111471
+[vim入门到精通]:https://zhuanlan.zhihu.com/p/68111471	.
 
 ###### 删除文件
 
@@ -95,7 +94,7 @@ rm -rf main.go
  ctrl + l
 ```
 
-[进阶]:https://www.lanqiao.cn/courses/1
+[进阶]:https://www.lanqiao.cn/courses/1	.
 
 
 
@@ -137,7 +136,7 @@ scp main root@127.0.0.1:/home/
 ```
 
 如果想要免密登录
-配置SSH即可 
+配置SSH即可
 
 1.在主机A创建密钥对
 
@@ -156,11 +155,12 @@ ssh-keygen #创建证书
 ```
 
 
+
 ####  上传源代码到服务器
 
 通常会先将源码上传到github再拉下来，或者使用goland一键上传
 
-[服务器go安装]:https://blog.csdn.net/qq_43098070/article/details/126075629
+[服务器go安装]:https://blog.csdn.net/qq_43098070/article/details/126075629	.
 
 然后进入项目目录直接编译即可
 
@@ -221,8 +221,7 @@ nohup ./main &
 
 ###### tmux
 
-[tmux]:https://www.ruanyifeng.com/blog/2019/10/tmux.html
-
+[tmux]:https://www.ruanyifeng.com/blog/2019/10/tmux.html  .
 
 
 ### 作业
