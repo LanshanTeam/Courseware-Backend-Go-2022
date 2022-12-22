@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package demo;
+
+message RegisterReq {
+  string username = 1;
+  string password = 2;
+}
+
+message RegisterRes {
+  int32 code = 1;
+  string msg = 2;
+}
+
+message LoginReq {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginRes {
+  int32 code = 1;
+  string msg = 2;
+  string token = 3;
+}
+
+service DemoSrv {
+  rpc Login(LoginReq) returns (LoginRes) {}
+  rpc Register(RegisterReq) returns (RegisterRes) {}
+}
