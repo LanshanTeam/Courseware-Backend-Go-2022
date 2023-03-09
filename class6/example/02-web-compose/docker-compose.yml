@@ -1,0 +1,48 @@
+version: "3.7"
+
+services:
+  rpc:
+    container_name: rpc
+    build:
+      context: .
+      dockerfile: Dockerfile_rpc
+    restart: always
+    environment:
+      - PWD_SALT=114514
+      - RPC_PORT=50051
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USERNAME=postgres
+      - DB_PWD=deepdarkfantasy
+      - DB_NAME=demo_db
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: Dockerfile_api
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - API_PORT=3000
+      - RPC_HOST=rpc
+      - RPC_PORT=50051
+
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    restart: always
+    volumes:
+      - ./migration:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_PASSWORD=deepdarkfantasy
+      - POSTGRES_DB=demo_db
+
+  redis:
+    container_name: redis
+    image: redis:latest
+    restart: always
+

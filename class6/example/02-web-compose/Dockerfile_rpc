@@ -1,0 +1,22 @@
+FROM rust:slim-buster as builder
+
+WORKDIR /build
+
+COPY . .
+
+RUN set -x; apt update && \
+    apt upgrade -y && \
+    apt install -y protobuf-compiler libprotobuf-dev pkg-config openssl libssl-dev && \
+    cargo clean && \
+    cargo build --bin rpc --release
+
+FROM debian:buster-slim
+
+RUN set -x; apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y protobuf-compiler libprotobuf-dev pkg-config openssl libssl-dev &&\
+    rm -rf /var/lib/apt/lists/*
+
+COPY --from=builder /build/target/release/rpc /usr/local/bin/rpc
+
+CMD ["rpc"]
