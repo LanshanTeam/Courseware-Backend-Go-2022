@@ -1,4 +1,4 @@
-class7# Courseware-Backend-Go-2022
+# Courseware-Backend-Go-2022
 
 |  节数  |      课程       | 讲师  |
 |:----:|:-------------:|:---:|
@@ -11,3 +11,4 @@ class7# Courseware-Backend-Go-2022
 | 第六节课 |    Docker     | 唐文荟 |
 | 第七节课 |     Linux     | 冯祥瑞 |
 | 第八节课 | 完整项目开发（理论+实战） | 王鑫  |
+| 第九节课 |     网络协议      | 冯祥瑞 |
