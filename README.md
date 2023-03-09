@@ -1,4 +1,4 @@
-class7# Courseware-Backend-Go-2022
+# Courseware-Backend-Go-2022
 
 |  节数  |      课程       | 讲师  |
 |:----:|:-------------:|:---:|
