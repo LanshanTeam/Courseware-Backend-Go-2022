@@ -1,0 +1,17 @@
+Name: demo.rpc
+ListenOn: 0.0.0.0:8080
+
+Consul :
+  Host : localhost:8500
+  Key : demo.rpc
+
+Telemetry:
+  Name: demo-rpc
+  Endpoint: http://localhost:14268/api/traces
+  Sampler: 1.0
+  Batcher: jaeger
+
+Prometheus:
+  Host: localhost
+  Port: 9091
+  Path: /metrics
