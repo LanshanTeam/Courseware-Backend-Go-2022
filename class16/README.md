@@ -46,6 +46,51 @@
 - **自动化监控和报警：** 使用监控工具和平台实时监测应用程序的性能指标、日志和异常情况，并根据预定义的规则触发报警通知。这有助于快速识别和解决潜在的问题，确保应用程序的稳定运行。
 - **自动化扩展和弹性：** 利用自动化工具和云服务提供商的能力，可以根据应用程序的负载和需求动态地调整资源配额，实现弹性扩展。这样可以确保应用程序能够根据实际需求进行自动伸缩，提供更好的性能和用户体验。
 
+可能有同学就有疑问了，到底啥是**基础设施即代码**?
+
+> 基础设施即代码（Infrastructure as Code，IaC）是一种**软件开发实践**，用于自动化和管理基础设施环境的配置和部署过程。它将**基础设施的定义和配置以代码的形式进行描述**，使用编程语言或专门的配置语言来**表示基础设施的各个组件和其之间的关系**。
+>
+> 通过基础设施即代码，开发团队可以**使用代码的方式管理和维护基础设施**，将基础设施的创建、配置和管理过程纳入版本控制系统，并应用软件开发中的自动化实践，例如持续集成和持续部署（CI/CD）。这样可以提供可重复、可扩展和可靠的基础设施部署，提高开发和运维的效率，降低人为错误的风险。
+>
+> 基础设施即代码可以用于各种类型的基础设施环境，包括云计算平台（如AWS、Azure、Google Cloud等）、虚拟化环境、容器化平台等。通过定义和管理代码，开发团队可以快速创建和部署基础设施环境，轻松复制和恢复环境，以及跟踪和管理基础设施的变更历史。
+>
+> 常见的基础设施即代码工具包括Terraform、Ansible、Chef和Puppet等，它们提供了丰富的功能和库，用于描述和部署基础设施资源和配置。开发团队可以使用这些工具来定义基础设施的状态和所需配置，然后执行自动化部署和管理流程，从而实现基础设施即代码的理念。
+
+举个例子
+
+假设我们正在开发一个Web应用程序，并希望在云平台上部署它。
+
+1. 定义基础设施：
+
+   ```json
+   provider "alicloud" {
+     access_key = "your_access_key"
+     secret_key = "your_secret_key"
+     region     = "cn-hangzhou"
+   }
+   #在上述代码中，你需要提供阿里云的访问密钥和区域信息，以便Terraform能够与阿里云进行交互。
+   
+   resource "alicloud_instance" "web_server" {
+     instance_name       = "web-server"
+     image_id            = "your_image_id"
+     instance_type       = "ecs.t5-lc1m2.large"
+     vswitch_id          = "your_vswitch_id"
+     security_group_ids  = ["your_security_group_id"]
+     internet_charge_type= "PayByTraffic"
+     internet_max_bandwidth_out = 100
+     password            = "your_password"
+   }
+   #上述代码中的`alicloud_instance`定义了一个阿里云ECS实例。你需要提供实例的名称、镜像ID、实例类型、虚拟交换机ID、安全组ID、网络流量计费方式、出网带宽和密码等信息。
+   ```
+
+2. 执行部署： 执行Terraform命令，例如`terraform apply`，Terraform会根据代码定义的配置创建和配置相应的云资源。
+
+   ```shell
+   $ terraform apply
+   ```
+
+   Terraform将根据代码中定义的阿里云资源配置，创建和配置相应的实例。
+
 ### 可观测性
 
 云原生注重应用程序的可观测性，即能够实时监控和分析应用程序的性能和行为。以下是一些关键的可观测性实践：
@@ -72,7 +117,7 @@
 - **容器化平台：** **Docker、Kubernetes**、OpenShift等。
 - **自动化工具：** **Jenkins**、GitLab CI/CD、Spinnaker、**Gogs**、**Github Action**等。
 - **基础设施即代码：** **Terraform**、Ansible、Pulumi等。
-- **监控和日志工具：** **Prometheus**、**Grafana**、**ELK Stack**等。
+- **监控和日志工具：** **Prometheus**、**Grafana**、**ELK Stack**、**loki**等。
 - **服务网格：** **Istio**、Linkerd等。
 - **云原生数据库：** CockroachDB、Vitess等。
 
@@ -193,16 +238,16 @@ Kubernetes采用主从架构，包括以下核心组件：
 
   Master节点是Kubernetes集群的控制平面，负责管理和控制整个集群。它包含以下组件：
 
-    - **API Server：** 提供对Kubernetes API的访问和操作，接收和处理来自用户和其他组件的请求。
-    - **Scheduler：** 负责将Pod调度到集群中的节点上，根据资源需求和策略进行优化。
-    - **Controller Manager：** 包含多个控制器，用于监控和维护集群的状态，确保期望状态与实际状态一致。
-    - **etcd：** 分布式键值存储，用于持久化保存集群的配置信息、状态和元数据。
+  - **API Server：** 提供对Kubernetes API的访问和操作，接收和处理来自用户和其他组件的请求。
+  - **Scheduler：** 负责将Pod调度到集群中的节点上，根据资源需求和策略进行优化。
+  - **Controller Manager：** 包含多个控制器，用于监控和维护集群的状态，确保期望状态与实际状态一致。
+  - **etcd：** 分布式键值存储，用于持久化保存集群的配置信息、状态和元数据。
 
 - **Worker节点：** Worker节点是Kubernetes集群中的工作节点，用于运行容器和应用程序。它包含以下组件：
 
-    - **Kubelet：** 在每个节点上运行的代理程序，负责与Master节点通信，并管理节点上的Pod和容器。
-    - **Container Runtime：** 负责运行容器的底层引擎，例如Docker、Containerd等。
-    - **kube-proxy：** 负责实现Service的网络代理和负载均衡功能。
+  - **Kubelet：** 在每个节点上运行的代理程序，负责与Master节点通信，并管理节点上的Pod和容器。
+  - **Container Runtime：** 负责运行容器的底层引擎，例如Docker、Containerd等。
+  - **kube-proxy：** 负责实现Service的网络代理和负载均衡功能。
 
 ### Kubernetes的工作流程
 
@@ -240,11 +285,11 @@ Kubernetes广泛应用于容器化应用程序的部署和管理，特别适用�
 
 ## 为什么要使用Kubernetes
 
-- Kubernetes可以提高应用程序的可用性、可扩展性和可移植性。
-- Kubernetes可以实现容器的自动调度、健康检查、故障恢复、水平扩缩等功能。
-- Kubernetes可以实现服务发现、负载均衡、服务网格等功能，提高应用程序的性能和可观察性。
-- Kubernetes可以实现存储的动态配置、快照、克隆等功能，提高数据的持久性和安全性。
-- Kubernetes可以实现角色权限控制、网络策略、凭证管理等功能，提高系统的安全性和合规性。
+- 提高应用程序的**可用性、可扩展性和可移植性**。
+- 实现容器的**自动调度、健康检查、故障恢复、水平扩缩**等功能。
+- 实现**服务发现、负载均衡、服务网格等功能，提高应用程序的性能和可观察性**。
+- 实现存储的**动态配置、快照、克隆**等功能，提高数据的**持久性和安全性**。
+- 实现**角色权限控制、网络策略、凭证管理**等功能，提高系统的**安全性和合规性**。
 
 ## 如何使用Kubernetes
 
@@ -253,9 +298,8 @@ Kubernetes广泛应用于容器化应用程序的部署和管理，特别适用�
 ## 如何在本地搭建Kubernetes环境
 
 - minikube是一个工具，可以在本地快速创建一个单节点的Kubernetes集群，适合开发和测试使用。
-- minikube支持多种虚拟化技术，如VirtualBox、Hyper-V、Docker等。
-- minikube提供了一些方便的命令，如minikube start、minikube stop、minikube dashboard等。
-- minikube也支持挂载本地目录到集群中，使用minikube mount命令。
+
+  https://minikube.sigs.k8s.io/docs/
 
 ## 如何部署应用程序到Kubernetes集群
 
@@ -333,4 +377,3 @@ kubectl delete -f hello-node.yaml
 1.复习相关知识，对概念了解即可
 
 2.学有余力可以尝试搭个k8s集群玩玩
-
