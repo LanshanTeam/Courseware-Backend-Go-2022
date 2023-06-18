@@ -40,7 +40,7 @@ Visual Studio Code 默认支持非常多的编程语言，包括HTML 和 CSS， 
 
 ### JetBrains
 
-![9421043e-3ec4-486e-91a4-0778512fa1fe](.\image\9421043e-3ec4-486e-91a4-0778512fa1fe.png)
+![9421043e-3ec4-486e-91a4-0778512fa1fe](./image/9421043e-3ec4-486e-91a4-0778512fa1fe.png)
 
 #### 介绍
 
@@ -52,7 +52,7 @@ Visual Studio Code 默认支持非常多的编程语言，包括HTML 和 CSS， 
 
 ## Git
 
-![](.\image\git-github.png)
+![](./image/git-github.png)
 
 Git 和 GitHub 是各个领域的开发者都应该学习的两项技术。
 
@@ -68,11 +68,11 @@ Git 是目前世界上最先进的分布式版本控制系统
 
 比如说你将来给甲方做🐂🐎了，你要给甲方写一个项目文档...
 
-![image-20221029124729958](.\image\image-20221029124729958.png)
+![image-20221029124729958](./image/image-20221029124729958.png)
 
 你学聪明了，之后你给每个版本的文档建立了一个独立文件...
 
-![image-20221029125220579](.\image\image-20221029125220579.png)
+![image-20221029125220579](./image/image-20221029125220579.png)
 
 于是你想，如果有一个软件，不但能自动帮我记录每次文件的改动，这样就不用自己管理一堆类似的文件了，也不需要把文件传来传去。如果想查看某次改动，只需要在软件里瞄一眼就可以，岂不是很方便？
 
@@ -85,11 +85,11 @@ Git 是目前世界上最先进的分布式版本控制系统
 | 3      | 项目文档.docx | 灿灿   | 添加项目细节 | 2022-10-29 16:22:03 |
 | 4      | 项目文档.docx | 荟荟子 | 修改拼写错误 | 2022-10-29 18:43:49 |
 
-![image-20221029213830541](.\image\image-20221029213830541.png)
+![image-20221029213830541](./image/image-20221029213830541.png)
 
 #### 什么是分布式？
 
-![](.\image\1673958-20210329150044538-2059927341.png)
+![](./image/1673958-20210329150044538-2059927341.png)
 
 集中式版本控制系统，版本库是集中放在中央服务器的，而干活的时候，用的都是自己的电脑，所以首先要从中央服务器哪里得到最新的版本，然后干活，干完后，需要把自己做完的活推送到中央服务器。集中式版本控制系统是必须联网才能工作，如果在局域网还可以，带宽够大，速度够快，如果在互联网下，如果网速慢的话，就纳闷了。
 
@@ -97,11 +97,11 @@ Git 是目前世界上最先进的分布式版本控制系统
 
 ### 使用
 
-![683419500-59ed5ebe73ac6](.\image\683419500-59ed5ebe73ac6.png)
+![683419500-59ed5ebe73ac6](./image/683419500-59ed5ebe73ac6.png)
 
-![](.\image\1620.png)
+![](./image/1620.png)
 
-![image-20221029215454210](.\image\image-20221029215454210.png)
+![image-20221029215454210](./image/image-20221029215454210.png)
 
 [Git从入门到入狱](https://blog.stellaris.wang/p/experience/git/)
 
@@ -170,7 +170,7 @@ $ git config --global user.email "email@example.com"
 
 ### 什么是markdown？
 
-<img src=".\image\1200px-Markdown-mark.svg.png" width="30%">
+<img src="./image/1200px-Markdown-mark.svg.png" width="30%">
 
 首先，Markdown是一门标记语言。假如你们知道HTML的话，Markdown和HTML可以认为是同类事物。简而言之，就是用纯文本的代码描述带格式文本的一种方法。
 
@@ -190,7 +190,7 @@ Markdown可以广泛用于文档、博客、论坛等带格式文本内容的创
 
 ### 什么是Typora？
 
-![](.\image\icon_256x256.png)
+![](./image/icon_256x256.png)
 
 Typora 是一款**支持实时预览的 Markdown 文本编辑器**。
 
@@ -255,7 +255,7 @@ func main(){
 
 Typora 支持许多常用的 HTML 标签，如果你了解 HTML 语法的话，你可以写出十分美观丰富的文档页面。
 
-![](.\image\89bba4dfdfb49b8d3c129ce1157a54b1.png)
+![](./image/89bba4dfdfb49b8d3c129ce1157a54b1.png)
 
 有了这一功能，我们就可以在 Typora 中创造出远超普通 Markdown 文档的页面效果。
 
@@ -367,9 +367,9 @@ Typora会自动将Heading统计作为文章的大纲，而且根据标题的级�
 - 只说一个笼统的问题，不说细节
 - 夺命连环问
 
-![img](.\image\19A08D42CB71D53A533D2EC0BBB53CCE.png)
+![img](./image/19A08D42CB71D53A533D2EC0BBB53CCE.png)
 
-![a277d2d2f89d0a22f4b12e425b585b2fcf547ede587345840](.\image\a277d2d2f89d0a22f4b12e425b585b2fcf547ede587345840.jpg)
+![a277d2d2f89d0a22f4b12e425b585b2fcf547ede587345840](./image/a277d2d2f89d0a22f4b12e425b585b2fcf547ede587345840.jpg)
 
 ### 例子
 
@@ -392,7 +392,7 @@ Typora会自动将Heading统计作为文章的大纲，而且根据标题的级�
 
 - 学长：这个都不会还是别学了
 
-<img src=".\image\image-20221030123200419.png" width="30%">
+<img src="./image/image-20221030123200419.png" width="30%">
 
 ### 我们为什么对你们提的问题感到厌烦？
 
