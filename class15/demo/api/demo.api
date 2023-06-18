@@ -1,0 +1,25 @@
+syntax = "v1"
+
+info(
+	title: "user-api"
+	desc: "demo for jaeger"
+	author: "MJ"
+	email: "minjerous@qq.com"
+	version: "v1"
+)
+type (
+	SayHelloReq {
+		Word string `from:"word"`
+	}
+	SayHelloResp {
+		Word string `json:"word"`
+	}
+)
+
+@server(
+	prefix: api
+)
+service Demo {
+	@handler SayHello
+	get /say (SayHelloReq) returns (SayHelloResp)
+}

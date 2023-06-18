@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "./pb";
+
+package pb;
+
+
+message SayWorldReq {
+  string word = 1;
+}
+
+
+message SayWorldResp {
+  string word = 1;
+}
+
+service Demo {
+  rpc SayWorld(SayWorldReq) returns(SayWorldResp);
+}

@@ -1,0 +1,29 @@
+Name: Demo
+Host: 0.0.0.0
+Port: 8888
+
+DemoRpc:
+  Target: consul://localhost:8500/demo.rpc?wait=14s
+Consul :
+  Host : localhost:8500
+  Key : demo.rpc
+Log:
+  ServiceName: demo-api
+  Mode: console
+  Level: debug
+  Encoding: plain
+  Path: logs
+
+
+Telemetry:
+  Name: demo-api
+  Endpoint: http://localhost:14268/api/traces
+  Sampler: 1.0
+  Batcher: jaeger
+
+Prometheus:
+  Host: localhost
+  Port: 9091
+  Path: /metrics
+
+
