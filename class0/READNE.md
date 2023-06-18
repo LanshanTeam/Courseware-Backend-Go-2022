@@ -4,7 +4,7 @@
 
 工欲善其事，必先利其器。想要优雅且高效的编写代码，就必须要掌握一款开发工具
 
-![image-20221027222126436](.\image\image-20221027222126436.png)
+![image-20221027222126436](./image/image-20221027222126436.png)
 
 年轻人，你渴望力量吗？
 
@@ -12,7 +12,7 @@
 
 ### VSCode
 
-![](.\image\1MGcLJS1ZvMFcBA94PXn16Q.png)
+![](./image/1MGcLJS1ZvMFcBA94PXn16Q.png)
 
 #### 介绍
 
