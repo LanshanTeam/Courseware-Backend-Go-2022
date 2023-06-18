@@ -30,9 +30,9 @@
 
 然而，HTTP协议存在以下问题：
 
-- **无状态：**因此每次会话完成后，服务端都不知道下一次客户端身份
-- **无连接：**HTPP协议采用一次请求，一次响应，每次请求和响应就携带有大量的header，因此，效率也更低下
-- **客户端不能主动发送数据**
+- **无状态**:因此每次会话完成后，服务端都不知道下一次客户端身份
+- **无连接**:HTPP协议采用一次请求，一次响应，每次请求和响应就携带有大量的header，因此，效率也更低下
+- **服务端不能主动发送向客户端推送数据，只能在收到消息的时候给客户端回复**
 
 举个例子，如果我们想实现QQ消息及时推送该怎么办?
 
@@ -160,24 +160,24 @@ func websocketFc(c *gin.Context) {
 ```go
 	//接受数据
 go func() {
-for ; ; {
-_, p, err := conn.ReadMessage()
-if err != nil {
-log.Println(err)
-} else {
-log.Println(string(p))
-}
-}
+    for ; ; {
+		_, p, err := conn.ReadMessage()
+        if err != nil {
+            log.Println(err)
+        } else {
+            log.Println(string(p))
+        }
+    }  
 }()
 
 //发送数据
 go func() {
-for i := 0; ; i++ {
-conn.WriteJSON(gin.H{
-"time": time.Now().Format(time.RFC3339),
-"No":   i,
-})
-}
+    for i := 0; ; i++ {
+        conn.WriteJSON(gin.H{
+            "time": time.Now().Format(time.RFC3339),
+            "No":   i,
+        }) 
+    }
 }()
 ```
 
