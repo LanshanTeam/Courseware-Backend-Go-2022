@@ -6,7 +6,7 @@
 
 但是微服务架构中，一个应用程序通常会被拆分成多个小型服务，这些服务可以分别运行在不同的计算机或容器中。由于每个服务都有自己独立的代码库和数据存储，因此在调试过程中，需要跨越多个服务来检查问题的根源。这种情况下，传统的DeBug或者日志排查就非常难受。
 
-![img](.\image\architecutre.png)
+![img](./image/architecutre.png)
 
 例如，假设我们有一个电子商务应用程序，其中包含一个购物车服务和一个支付服务。当用户向购物车中添加商品并尝试结账时，支付服务会被调用。如果用户报告说他们无法完成购买，我们需要检查购物车服务和支付服务之间的通信是否正常。
 
@@ -14,7 +14,7 @@
 
 # OpenTelemetry
 
-![img](.\image\opentelemetry.png)
+![img](./image/opentelemetry.png)
 
 ## 前世
 
@@ -40,7 +40,7 @@ OpenTelemetry(OTel) 是 [CNCF ](https://www.cncf.io/projects/)的一个跨语言
 
 **架构图**
 
-![img](.\image\otel-architecture.png)
+![img](./image/otel-architecture.png)
 
 ## OpenTelemetry组件
 
@@ -69,7 +69,7 @@ OpenTelemetry(OTel) 是 [CNCF ](https://www.cncf.io/projects/)的一个跨语言
 
 ### 可观测性（observability）
 
-![img](.\image\observablity.png)
+![img](./image/observablity.png)
 
 #### 什么是可观察性？
 
@@ -258,7 +258,7 @@ Span Kind是指Span类型，有如下几种：
 
 ###  OTel Collector
 
-![img](.\image\collector.png)
+![img](./image/collector.png)
 
 **OTel Collector** **采集器**
 
@@ -293,7 +293,7 @@ Kafka+[go-stash](https://github.com/kevwan/go-stash)/Logstash和Elasticsearch �
 
 # Jaeger
 
-![img](.\image\jaeger.png)
+![img](./image/jaeger.png)
 
 [GitHub： Jaeger ](https://github.com/jaegertracing/jaeger) 
 
@@ -331,7 +331,7 @@ docker run -d --name jaeger \
   jaegertracing/all-in-one:1.45
 ```
 
-![img](.\image\jaeger-1.png)![img](.\image\jaeger-2.png)
+![img](./image/jaeger-1.png)![img](./image/jaeger-2.png)
 
 # Prometheus
 
